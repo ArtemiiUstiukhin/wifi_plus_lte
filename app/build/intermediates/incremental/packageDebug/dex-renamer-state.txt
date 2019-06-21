@@ -1,0 +1,7 @@
+#Sun May 12 19:10:12 MSK 2019
+base.0=D\:\\MultipathControl-master\\HIPRIKeeper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_4e5a79f8a9d53f4ba74270c45c6153e5a9e68bc6
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=D\:\\MultipathControl-master\\HIPRIKeeper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_58abd2ce46cb5d823bad08a4a6c29b37c34db510\\classes.dex
+base.1=D\:\\MultipathControl-master\\HIPRIKeeper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_58abd2ce46cb5d823bad08a4a6c29b37c34db510
+file.0=D\:\\MultipathControl-master\\HIPRIKeeper\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_4e5a79f8a9d53f4ba74270c45c6153e5a9e68bc6\\classes.dex

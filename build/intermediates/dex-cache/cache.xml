@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8f876796c303f3888b5e2b37f01895aa12b2ffe4">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_58abd2ce46cb5d823bad08a4a6c29b37c34db510\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.android\build-cache\8a6b10987736988f1107b6dc0250072a117d1304\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\classes_8b9272295851712f82246eb37196216ed1436b44.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.android\build-cache\6fdef7e9f4f0edee1b491a0d2e0bf727d09a86fd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\classes_6669bb927d929a85f291fa17338c7c23f7b0384d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.android\build-cache\cf2beec5c9fef49eaf2fcf69d0dfcb215fa4016a\output\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_fc85369b8e0ae54aa95685159e15c3fdd5ae07b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\25.0.0\a22d2cc94da87b254451fa8ed28afc30b4653773\support-annotations-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\support-annotations-25.0.0_819e601d9be1729f3d9098b215824fe43f46b876.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.android\build-cache\401be0d0e4fbac351d0f299b50c64f62104375d4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\classes_05b1d89076307b1284bcc7a560d774dba1a5b15a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.android\build-cache\ceb1a1340613e91a371cee39ccd9c99a04d81bbb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\classes_607e98aa6ef89cf390d547e453d312b60fa09d7e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.android\build-cache\7a711c0875788ae7b7c37b224509b2eef36f1002\output\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_ea57e7309bd72883ecfca5d920f3930bad3a09af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.android\build-cache\7a711c0875788ae7b7c37b224509b2eef36f1002\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\classes_2e4f1313b23fc2d760279da03e0fcd538445eac5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.android\build-cache\401be0d0e4fbac351d0f299b50c64f62104375d4\output\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_cd5f466519d4bdfa87bc2af08fddcc7d00ab35e6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.android\build-cache\8baa50b25db49de2a1c924123a7af9baba614505\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\classes_b8bf778eabcb892ea9a3b616423828b5a58750f9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.android\build-cache\ceb1a1340613e91a371cee39ccd9c99a04d81bbb\output\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_b2589a80c64bc0f0479097cb23e9a0fa40747c5a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.android\build-cache\f43e91cf5a0e0acf2304ac125ea93bb44cb042b7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\classes_0d6c68ccf64e454f5558021776511cc92cced9dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.android\build-cache\1d1b14f88d2f8e4d406ec3ea5f15d29fb166feb0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\classes_8b2d6f380e6da29f0e610360575fec5a32db43c9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.android\build-cache\8a6b10987736988f1107b6dc0250072a117d1304\output\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_5d943b0d0a3ddbc4d4c960ce345f3df8a0538948.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="12920f9016b8b05acbc2af7cdc13cef6946fe7d3">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_4e5a79f8a9d53f4ba74270c45c6153e5a9e68bc6\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\alena\.android\build-cache\cf2beec5c9fef49eaf2fcf69d0dfcb215fa4016a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="D:\MultipathControl-master\HIPRIKeeper\app\build\intermediates\pre-dexed\debug\classes_a14120e19471b16222d71eb8875ea4abab0d1dd9.jar" />
+    </item>
+
+</items>

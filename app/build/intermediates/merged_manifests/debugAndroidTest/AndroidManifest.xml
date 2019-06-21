@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="be.uclouvain.hiprikeeper.test">
+
+    <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="26" />
+
+    <application android:debuggable="true" >
+        <uses-library android:name="android.test.runner" />
+    </application>
+
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+                     android:targetPackage="be.uclouvain.hiprikeeper"
+                     android:handleProfiling="false"
+                     android:functionalTest="false"
+                     android:label="Tests for be.uclouvain.hiprikeeper"/>
+</manifest>
