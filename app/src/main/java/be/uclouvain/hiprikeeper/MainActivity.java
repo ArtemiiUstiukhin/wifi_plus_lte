@@ -66,6 +66,8 @@ public class MainActivity extends ActionBarActivity {
 	private HashMap<Integer, String> apps;
 	private ArrayList wifi;
 	private ArrayList lte;
+	private ArrayList commands;
+	private String lastError;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -104,16 +106,23 @@ public class MainActivity extends ActionBarActivity {
 
 			LinearLayout layout = new LinearLayout(context);
 			layout.setOrientation(LinearLayout.HORIZONTAL);
+
+			LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(600, LinearLayout.LayoutParams.WRAP_CONTENT);
+
 			TextView textView = new TextView(context);
 			textView.setText(app.getValue());
-			LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(600, LinearLayout.LayoutParams.WRAP_CONTENT);
 			textView.setLayoutParams(layoutParams);
+			textView.setGravity(11);
+
 			RadioButton radioButtonWifi = new RadioButton(context);
 			radioButtonWifi.setText("Wifi");
 			radioButtonWifi.setId(1);
+			radioButtonWifi.setGravity(3);
+
 			RadioButton radioButtonLte = new RadioButton(context);
 			radioButtonLte.setText("Lte");
 			radioButtonLte.setId(0);
+			radioButtonLte.setGravity(5);
 
 			radioButtonWifi.setChecked(true);
 
@@ -168,28 +177,69 @@ public class MainActivity extends ActionBarActivity {
 				break;
 			}
 		}
-		/**
-		for (int uid: apps.keySet()){
-			RadioGroup radioGroup = findViewById(uid);
-			if (radioGroup.getCheckedRadioButtonId()==1){
-				wifi.add(uid);
-			}else if (radioGroup.getCheckedRadioButtonId()==0) {
-				lte.add(uid);
-			}
-		}
-		**/
+
 		System.out.println("Wifi: " + wifi);
 		System.out.println("Lte: " + lte);
 
+		deletePrevRules();
+		createRuleCommand();
+		for (Object str : commands){
+			executeCommand(str.toString());
+		}
+	}
+
+	private void deletePrevRules(){
+		executeCommand("ip rule");
+		int counter = 0;
+		for (String str : lastError.split("\n")){
+			if (str.substring(0, str.indexOf(":")).equals("9000")){
+				counter++;
+			}
+		}
+		while (counter > 0) {
+			executeCommand("ip rule del priority 9000");
+			counter--;
+		}
+	}
+
+
+	private void createRuleCommand(){
+
+		commands = new ArrayList();
+
+		for (Object w : wifi){
+			String line = "ip rule add priority 9000 uidrange " + w.toString() + "-" + w.toString() + " lookup 1003";
+			commands.add(line);
+		}
+		for (Object w : lte){
+			String line = "ip rule add priority 9000 uidrange " + w.toString() + "-" + w.toString() + " lookup 1008";
+			commands.add(line);
+		}
 	}
 
 
 	public void onClickButtonRule(View view){
 		//EditText et = findViewById(R.id.command);
 		//String command = et.getText().toString();
+		/**
+		String command = "ip rule add priority 9000 uidrange ";
+		for (Object id : wifi){
+			command += id.toString() + ",";
+		}
+		command += " lookup 1003";
+		executeCommand(command);
+
+		command = "ip rule add priority 9000 uidrange ";
+		for (Object id : lte){
+			command += id.toString() + ",";
+		}
+		command += " lookup 1008";
+		**/
+
+		//String command = "ip rule";
 		//executeCommand(command);
-		TextView tw = findViewById(R.id.finText);
-		tw.setText("WIFI: " + wifi.toString() + "\n" + "LTE: " + lte.toString());
+		//TextView tw = findViewById(R.id.finText);
+		//tw.setText("WIFI: " + wifi.toString() + "\n" + "LTE: " + lte.toString());
 	}
 
 
@@ -284,6 +334,9 @@ public class MainActivity extends ActionBarActivity {
 			res = readFully(response);
 			System.out.println("Command: "+ command);
 			System.out.println(res);
+			lastError = new String();
+			lastError = res;
+			System.out.println(res.getClass());
 		}catch(IOException e){
 			//throw new Exception(e);
 			System.out.println("IOException - "+ e.getMessage());
