@@ -318,15 +318,15 @@ public class MainActivity extends ActionBarActivity {
 		InputStream response = null;
 
 		try{
-			//Process su = Runtime.getRuntime().exec("su");
-			Process su = Runtime.getRuntime().exec(command + "\n");
+			Process su = Runtime.getRuntime().exec("su");
+			//Process su = Runtime.getRuntime().exec(command + "\n");
 
 			outputStream = new DataOutputStream(su.getOutputStream());
 			response = su.getInputStream();
 
 
-			//outputStream.writeBytes(command + "\n");
-			//outputStream.flush();
+			outputStream.writeBytes(command + "\n");
+			outputStream.flush();
 
 			//outputStream.writeBytes("exit\n");
 			//outputStream.flush();
