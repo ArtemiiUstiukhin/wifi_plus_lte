@@ -29,6 +29,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -42,6 +43,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,9 +53,13 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import project.app.*;
 
@@ -98,46 +104,59 @@ public class MainActivity extends ActionBarActivity {
 
 		Context context = getApplicationContext();
 
+
+
 		//int counter = 0;
 
 		TrafficSnapshot(context);
 		LinearLayout main_layout = findViewById(R.id.container);
 
+		apps = sortHashMapByValues(apps);
+
 		for (Map.Entry<Integer, String> app : apps.entrySet()) {
 			System.out.print(app.getKey() + ": ");
 			System.out.println(app.getValue());
 
-			LinearLayout layout = new LinearLayout(context);
-			layout.setOrientation(LinearLayout.HORIZONTAL);
+			RelativeLayout layout = new RelativeLayout(context);
 
-			LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(600, LinearLayout.LayoutParams.WRAP_CONTENT);
+			LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(500, LinearLayout.LayoutParams.WRAP_CONTENT);
 
 			TextView textView = new TextView(context);
 			textView.setText(app.getValue());
 			textView.setLayoutParams(layoutParams);
-			textView.setGravity(11);
+			textView.setGravity(17);
+
+			textView.setTextColor(Color.BLACK);
+			textView.setTextSize(17);
+			textView.setTypeface(null,Typeface.BOLD);
 
 			RadioButton radioButtonWifi = new RadioButton(context);
-			radioButtonWifi.setText("Wifi");
+			//radioButtonWifi.setText("Wifi");
 			radioButtonWifi.setId(1);
-			radioButtonWifi.setGravity(3);
+			radioButtonWifi.setGravity(16);
 
 			RadioButton radioButtonLte = new RadioButton(context);
-			radioButtonLte.setText("Lte");
+			//radioButtonLte.setText("Lte");
 			radioButtonLte.setId(0);
-			radioButtonLte.setGravity(5);
+			radioButtonLte.setGravity(16);
 
 			radioButtonWifi.setChecked(true);
 
 			RadioGroup radioGroup = new RadioGroup(context);
 			radioGroup.setId(app.getKey());
 			radioGroup.addView(radioButtonWifi);
+			radioGroup.addView(textView);
 			radioGroup.addView(radioButtonLte);
-			layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-			radioGroup.setLayoutParams(layoutParams);
+
+			//layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+			//layoutParams.setMargins(150,0,150,0);
+			//radioGroup.setLayoutParams(layoutParams);
+			RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT);
+			lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
+			radioGroup.setLayoutParams(lp);
 			radioGroup.setOrientation(LinearLayout.HORIZONTAL);
 
-			layout.addView(textView);
+			//layout.addView(textView);
 			layout.addView(radioGroup);
 
 			main_layout.addView(layout);
@@ -155,7 +174,35 @@ public class MainActivity extends ActionBarActivity {
 		}
 	}
 
+	public LinkedHashMap<Integer, String> sortHashMapByValues(
+			HashMap<Integer, String> passedMap) {
+		List<Integer> mapKeys = new ArrayList<>(passedMap.keySet());
+		List<String> mapValues = new ArrayList<>(passedMap.values());
+		Collections.sort(mapValues);
+		Collections.sort(mapKeys);
 
+		LinkedHashMap<Integer, String> sortedMap =
+				new LinkedHashMap<>();
+
+		Iterator<String> valueIt = mapValues.iterator();
+		while (valueIt.hasNext()) {
+			String val = valueIt.next();
+			Iterator<Integer> keyIt = mapKeys.iterator();
+
+			while (keyIt.hasNext()) {
+				Integer key = keyIt.next();
+				String comp1 = passedMap.get(key);
+				String comp2 = val;
+
+				if (comp1.equals(comp2)) {
+					keyIt.remove();
+					sortedMap.put(key, val);
+					break;
+				}
+			}
+		}
+		return sortedMap;
+	}
 
 	public void onClickButton(View view){
 		LinearLayout linearLayout = findViewById(R.id.container);

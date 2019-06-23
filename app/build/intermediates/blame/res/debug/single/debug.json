@@ -544,6 +544,10 @@
         "source": "/home/admint/.gradle/caches/transforms-2/files-2.1/6645e174719242142735d23e3637c266/res/drawable-xhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
+        "merged": "/home/admint/huawei/proj/HIPRIKeeper/app/build/intermediates/res/merged/debug/drawable-hdpi_wifi.png.flat",
+        "source": "/home/admint/huawei/proj/HIPRIKeeper/app/src/main/res/drawable-hdpi/wifi.png"
+    },
+    {
         "merged": "/home/admint/huawei/proj/HIPRIKeeper/app/build/intermediates/res/merged/debug/drawable_abc_list_selector_background_transition_holo_light.xml.flat",
         "source": "/home/admint/.gradle/caches/transforms-2/files-2.1/6645e174719242142735d23e3637c266/res/drawable/abc_list_selector_background_transition_holo_light.xml"
     },
@@ -1190,6 +1194,10 @@
     {
         "merged": "/home/admint/huawei/proj/HIPRIKeeper/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "/home/admint/.gradle/caches/transforms-2/files-2.1/6645e174719242142735d23e3637c266/res/drawable-xxhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/admint/huawei/proj/HIPRIKeeper/app/build/intermediates/res/merged/debug/drawable-hdpi_lte.png.flat",
+        "source": "/home/admint/huawei/proj/HIPRIKeeper/app/src/main/res/drawable-hdpi/lte.png"
     },
     {
         "merged": "/home/admint/huawei/proj/HIPRIKeeper/app/build/intermediates/res/merged/debug/drawable_abc_btn_borderless_material.xml.flat",

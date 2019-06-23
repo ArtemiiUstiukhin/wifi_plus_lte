@@ -552,6 +552,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable ic_stat_name
+drawable lte
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -566,6 +567,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable wifi
 id ALT
 id CTRL
 id FUNCTION
@@ -624,6 +626,8 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imgLte
+id imgWifi
 id info
 id italic
 id line1
