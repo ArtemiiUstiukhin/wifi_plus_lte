@@ -240,11 +240,11 @@ public class MainActivity extends ActionBarActivity {
 		commands = new ArrayList();
 
 		for (Object w : wifi){
-			String line = "ip rule add priority 9000 uidrange " + w.toString() + "-" + w.toString() + " lookup 1003";
+			String line = "ip rule add priority 9000 uidrange " + w.toString() + "-" + w.toString() + " lookup " + tableNames.get("wifi");
 			commands.add(line);
 		}
 		for (Object w : lte){
-			String line = "ip rule add priority 9000 uidrange " + w.toString() + "-" + w.toString() + " lookup 1008";
+			String line = "ip rule add priority 9000 uidrange " + w.toString() + "-" + w.toString() + " lookup " + tableNames.get("lte");
 			commands.add(line);
 		}
 	}
