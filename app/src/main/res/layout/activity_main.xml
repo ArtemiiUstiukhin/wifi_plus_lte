@@ -37,48 +37,42 @@
         android:text="@string/switch_save_battery_desc"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="4"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/text_save_battery_desc"/>
-
     <Button
         android:id="@+id/submit"
-        android:text="Submit"
-        android:onClick="onClickButton"
         android:layout_width="300px"
         android:layout_height="100px"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/text_save_battery_desc"
+        android:layout_marginTop="35dp"
         android:gravity="center"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/container"/>
-
-    <Button
-        android:id="@+id/addRule"
-        android:text="Add Rule"
-        android:onClick="onClickButtonRule"
-        android:layout_width="300px"
-        android:layout_height="100px"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/container"/>
-
-    <!--EditText
-        android:id="@+id/command"
-        android:layout_width="1000px"
-        android:layout_height="200px"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/addRule"
-        /-->
+        android:layout_marginLeft="650px"
+        android:onClick="onClickButton"
+        android:text="Submit" />
 
     <TextView
         android:id="@+id/finText"
-        android:layout_width="1000px"
-        android:layout_height="200px"
+        android:layout_width="600px"
+        android:layout_height="100px"
+        android:text="Set new ip rule config"
         android:layout_marginTop="35dp"
-        android:layout_below="@+id/addRule"/>
+        android:gravity="center"
+        android:layout_below="@+id/text_save_battery_desc"/>
+
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="35px"
+        android:layout_below="@+id/finText">
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            />
+    </ScrollView>
+
 
 </RelativeLayout>

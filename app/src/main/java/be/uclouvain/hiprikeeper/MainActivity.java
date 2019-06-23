@@ -26,6 +26,8 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -67,6 +69,7 @@ public class MainActivity extends ActionBarActivity {
 	private ArrayList wifi;
 	private ArrayList lte;
 	private ArrayList commands;
+	private HashMap<String, String> tableNames;
 	private String lastError;
 
 	@Override
@@ -95,9 +98,9 @@ public class MainActivity extends ActionBarActivity {
 
 		Context context = getApplicationContext();
 
-		int counter = 0;
+		//int counter = 0;
 
-		apps = TrafficSnapshot(context);
+		TrafficSnapshot(context);
 		LinearLayout main_layout = findViewById(R.id.container);
 
 		for (Map.Entry<Integer, String> app : apps.entrySet()) {
@@ -139,10 +142,12 @@ public class MainActivity extends ActionBarActivity {
 
 			main_layout.addView(layout);
 
+			/**
 			counter++;
 			if (counter==5){
 				break;
 			}
+			 **/
 
 			System.out.println("КЛЮЧ = " + app.getKey());
 			RadioGroup rg = findViewById(app.getKey());
@@ -158,7 +163,7 @@ public class MainActivity extends ActionBarActivity {
 		System.out.println("Количество записей = " + apps.size());
 		wifi = new ArrayList();
 		lte = new ArrayList();
-		int counter = 0;
+		//int counter = 0;
 		for (Map.Entry<Integer, String> app : apps.entrySet()){
 			int uid = app.getKey();
 			System.out.println("КЛЮЧ = " + uid);
@@ -172,21 +177,48 @@ public class MainActivity extends ActionBarActivity {
 				lte.add(uid);
 			}
 
+			/**
 			counter++;
 			if (counter==5){
 				break;
 			}
+			 **/
 		}
 
 		System.out.println("Wifi: " + wifi);
 		System.out.println("Lte: " + lte);
 
+
 		deletePrevRules();
+		getTableNumbers();
 		createRuleCommand();
 		for (Object str : commands){
 			executeCommand(str.toString());
 		}
+
+		//executeCommand("ip rule");
 	}
+
+	private void getTableNumbers(){
+		executeCommand("ip rule");
+		tableNames = new HashMap<String, String>();
+		String type;
+		for (String str : lastError.split("\n")){
+			if (str.substring(0, str.indexOf(":")).equals("10500")){
+
+				type = str.split(" ")[3].equals("wlan0") ? "wifi" : "lte";
+				System.out.println("interface = "+str.split(" ")[3]);
+				System.out.println("type = "+type);
+				tableNames.put(type,str.substring(str.length()-5, str.length()-1));
+			}
+			if (tableNames.size() == 2){
+				break;
+			}
+		}
+		System.out.println(tableNames.size()+ " " + tableNames);
+
+	}
+
 
 	private void deletePrevRules(){
 		executeCommand("ip rule");
@@ -216,32 +248,6 @@ public class MainActivity extends ActionBarActivity {
 			commands.add(line);
 		}
 	}
-
-
-	public void onClickButtonRule(View view){
-		//EditText et = findViewById(R.id.command);
-		//String command = et.getText().toString();
-		/**
-		String command = "ip rule add priority 9000 uidrange ";
-		for (Object id : wifi){
-			command += id.toString() + ",";
-		}
-		command += " lookup 1003";
-		executeCommand(command);
-
-		command = "ip rule add priority 9000 uidrange ";
-		for (Object id : lte){
-			command += id.toString() + ",";
-		}
-		command += " lookup 1008";
-		**/
-
-		//String command = "ip rule";
-		//executeCommand(command);
-		//TextView tw = findViewById(R.id.finText);
-		//tw.setText("WIFI: " + wifi.toString() + "\n" + "LTE: " + lte.toString());
-	}
-
 
 
 	@Override
@@ -288,8 +294,32 @@ public class MainActivity extends ActionBarActivity {
 
 	//func to ge all UIDs
 
-	private HashMap TrafficSnapshot(Context ctxt) {
+	private void TrafficSnapshot(Context ctxt) {
 
+		String[] internetPermission = {"android.permission.INTERNET"};
+		PackageManager packageManager= getApplicationContext().getPackageManager();
+		//PackageInfo packageInfo = new PackageInfo();
+		List<PackageInfo> listPackageInfo = packageManager.getPackagesHoldingPermissions(internetPermission,PackageManager.GET_META_DATA);
+
+		apps = new HashMap<Integer, String>();
+
+		for (PackageInfo packageInfo : listPackageInfo) {
+
+			try {
+				final String packageName = packageInfo.packageName; //app.getValue();
+				//PackageManager packageManager= getApplicationContext().getPackageManager();
+				ApplicationInfo appInfo = packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA);
+				String appName = (String) packageManager.getApplicationLabel(appInfo);
+				//String[] internetPermission = {"android.permission.INTERNET"};
+				System.out.println("Apps with internet permission: " + packageManager.getPackagesHoldingPermissions(internetPermission, PackageManager.GET_META_DATA));
+
+				apps.put(packageInfo.applicationInfo.uid, appName);
+
+			} catch (Exception e) {
+				System.out.println("Name not found: " + e);
+			}
+		}
+		/**
 		HashMap<Integer, String> appNames=new HashMap<Integer, String>();
 
 		for (ApplicationInfo app : ctxt.getPackageManager().getInstalledApplications(0)) {
@@ -298,6 +328,7 @@ public class MainActivity extends ActionBarActivity {
 		}
 
 		return appNames;
+		 **/
 	}
 
 	//func to execute shell command
@@ -328,8 +359,9 @@ public class MainActivity extends ActionBarActivity {
 			outputStream.writeBytes(command + "\n");
 			outputStream.flush();
 
-			//outputStream.writeBytes("exit\n");
-			//outputStream.flush();
+			outputStream.writeBytes("exit\n");
+			outputStream.flush();
+
 			su.waitFor();
 			res = readFully(response);
 			System.out.println("Command: "+ command);
