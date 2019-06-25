@@ -19,10 +19,6 @@
 
 package be.uclouvain.hiprikeeper;
 
-import android.annotation.TargetApi;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -31,15 +27,9 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -59,7 +49,6 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import project.app.*;
 
@@ -73,10 +62,11 @@ public class MainActivity extends ActionBarActivity {
 	private Switch saveBatterySwitch;
 	private HashMap<Integer, String> apps;
 	private ArrayList wifi;
-	private ArrayList lte;
+	private ArrayList<Integer> lte;
 	private ArrayList commands;
 	private HashMap<String, String> tableNames;
 	private String lastError;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -104,18 +94,22 @@ public class MainActivity extends ActionBarActivity {
 
 		Context context = getApplicationContext();
 
-
-
 		//int counter = 0;
 
 		TrafficSnapshot(context);
-		LinearLayout main_layout = findViewById(R.id.container);
 
 		apps = sortHashMapByValues(apps);
 
+		addAppsToChooseNet(context);
+	}
+
+	private void addAppsToChooseNet(Context context){
+
+		open();
+		LinearLayout main_layout = findViewById(R.id.container);
+		main_layout.removeAllViewsInLayout();
+
 		for (Map.Entry<Integer, String> app : apps.entrySet()) {
-			System.out.print(app.getKey() + ": ");
-			System.out.println(app.getValue());
 
 			RelativeLayout layout = new RelativeLayout(context);
 
@@ -125,22 +119,29 @@ public class MainActivity extends ActionBarActivity {
 			textView.setText(app.getValue());
 			textView.setLayoutParams(layoutParams);
 			textView.setGravity(17);
-
 			textView.setTextColor(Color.BLACK);
-			textView.setTextSize(17);
+			textView.setTextSize(18);
 			textView.setTypeface(null,Typeface.BOLD);
 
 			RadioButton radioButtonWifi = new RadioButton(context);
-			//radioButtonWifi.setText("Wifi");
-			radioButtonWifi.setId(1);
+			int one = 1;
+			radioButtonWifi.setId(one);
 			radioButtonWifi.setGravity(16);
 
 			RadioButton radioButtonLte = new RadioButton(context);
-			//radioButtonLte.setText("Lte");
-			radioButtonLte.setId(0);
+			int zero = 0;
+			radioButtonLte.setId(zero);
 			radioButtonLte.setGravity(16);
 
-			radioButtonWifi.setChecked(true);
+			if (lte!=null){
+				if (lte.contains(app.getKey())){
+					radioButtonLte.setChecked(true);
+				}else {
+					radioButtonWifi.setChecked(true);
+				}
+			}else {
+				radioButtonWifi.setChecked(true);
+			}
 
 			RadioGroup radioGroup = new RadioGroup(context);
 			radioGroup.setId(app.getKey());
@@ -148,34 +149,50 @@ public class MainActivity extends ActionBarActivity {
 			radioGroup.addView(textView);
 			radioGroup.addView(radioButtonLte);
 
-			//layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-			//layoutParams.setMargins(150,0,150,0);
-			//radioGroup.setLayoutParams(layoutParams);
 			RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT);
 			lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
 			radioGroup.setLayoutParams(lp);
 			radioGroup.setOrientation(LinearLayout.HORIZONTAL);
 
-			//layout.addView(textView);
 			layout.addView(radioGroup);
 
 			main_layout.addView(layout);
+		}
 
-			/**
-			counter++;
-			if (counter==5){
-				break;
-			}
-			 **/
+	}
 
-			System.out.println("КЛЮЧ = " + app.getKey());
-			RadioGroup rg = findViewById(app.getKey());
-			System.out.println("ЭЛЕМЕНТ = " + rg.getCheckedRadioButtonId());
+
+	public void open(){
+
+		ArrayList<Integer> phones = JSONHelper.importFromJSON(this, true);
+		if(phones!=null){
+			//ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, phones);
+			//listView.setAdapter(adapter);
+			System.out.println(phones);
+			lte = phones;
+			//Toast.makeText(this, "Данные восстановлены", Toast.LENGTH_LONG).show();
+			System.out.println("Данные восстановлены");
+
+		}else{
+			//Toast.makeText(this, "Не удалось открыть данные", Toast.LENGTH_LONG).show();
+			System.out.println("Не удалось открыть данные");
 		}
 	}
 
-	public LinkedHashMap<Integer, String> sortHashMapByValues(
-			HashMap<Integer, String> passedMap) {
+	public void save(){
+
+		boolean result = JSONHelper.exportToJSON(this, lte, true);
+		if(result){
+			//Toast.makeText(this, "Данные сохранены", Toast.LENGTH_LONG).show();
+			System.out.println("Данные сохранены");
+
+		}else{
+			//Toast.makeText(this, "Не удалось сохранить данные", Toast.LENGTH_LONG).show();
+			System.out.println("Не удалось сохранить данные");
+		}
+	}
+
+	public static LinkedHashMap<Integer, String> sortHashMapByValues(HashMap<Integer, String> passedMap) {
 		List<Integer> mapKeys = new ArrayList<>(passedMap.keySet());
 		List<String> mapValues = new ArrayList<>(passedMap.values());
 		Collections.sort(mapValues);
@@ -213,9 +230,9 @@ public class MainActivity extends ActionBarActivity {
 		//int counter = 0;
 		for (Map.Entry<Integer, String> app : apps.entrySet()){
 			int uid = app.getKey();
-			System.out.println("КЛЮЧ = " + uid);
+			//System.out.println("КЛЮЧ = " + uid);
 			RadioGroup rg = findViewById(uid);
-			System.out.println("ЭЛЕМЕНТ! = " + rg.getCheckedRadioButtonId());
+			//System.out.println("ЭЛЕМЕНТ! = " + rg.getCheckedRadioButtonId());
 
 			RadioGroup radioGroup = findViewById(uid);
 			if (radioGroup.getCheckedRadioButtonId()==1){
@@ -223,18 +240,11 @@ public class MainActivity extends ActionBarActivity {
 			}else if (radioGroup.getCheckedRadioButtonId()==0) {
 				lte.add(uid);
 			}
-
-			/**
-			counter++;
-			if (counter==5){
-				break;
-			}
-			 **/
 		}
 
 		System.out.println("Wifi: " + wifi);
 		System.out.println("Lte: " + lte);
-
+		save();
 
 		deletePrevRules();
 		getTableNumbers();
@@ -245,6 +255,12 @@ public class MainActivity extends ActionBarActivity {
 
 		//executeCommand("ip rule");
 	}
+
+	public void onClickButtonChoose(View view){
+		Intent intent = new Intent(this, AppsActivity.class);
+		startActivity(intent);
+	}
+
 
 	private void getTableNumbers(){
 		executeCommand("ip rule");
@@ -287,7 +303,7 @@ public class MainActivity extends ActionBarActivity {
 		commands = new ArrayList();
 
 		for (Object w : wifi){
-			String line = "ip rule add priority 9000 uidrange " + w.toString() + "-" + w.toString() + " lookup " + tableNames.get("wifi");
+			String line = "ip rule add priority 9000 uidrange " + w.toString() + "-" + w.toString() + " lookup wlan0";
 			commands.add(line);
 		}
 		for (Object w : lte){
@@ -301,7 +317,26 @@ public class MainActivity extends ActionBarActivity {
 	protected void onResume() {
 		super.onResume();
 
+		TrafficSnapshot(this);
+		ArrayList<Integer> checkedApps = JSONHelper.importFromJSON(this, false);
+
+		ArrayList<Integer> deleteId= new ArrayList<Integer>();
+
+		for (int uid : apps.keySet()){
+			if (!checkedApps.contains(uid)){
+				deleteId.add(uid);
+			}
+		}
+
+		for (int id : deleteId){
+			apps.remove(id);
+		}
+
+		addAppsToChooseNet(this);
+
+
 		setChecked();
+
 	}
 
 	protected void onDestroy() {
@@ -358,7 +393,7 @@ public class MainActivity extends ActionBarActivity {
 				ApplicationInfo appInfo = packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA);
 				String appName = (String) packageManager.getApplicationLabel(appInfo);
 				//String[] internetPermission = {"android.permission.INTERNET"};
-				System.out.println("Apps with internet permission: " + packageManager.getPackagesHoldingPermissions(internetPermission, PackageManager.GET_META_DATA));
+				//System.out.println("Apps with internet permission: " + packageManager.getPackagesHoldingPermissions(internetPermission, PackageManager.GET_META_DATA));
 
 				apps.put(packageInfo.applicationInfo.uid, appName);
 
@@ -366,16 +401,6 @@ public class MainActivity extends ActionBarActivity {
 				System.out.println("Name not found: " + e);
 			}
 		}
-		/**
-		HashMap<Integer, String> appNames=new HashMap<Integer, String>();
-
-		for (ApplicationInfo app : ctxt.getPackageManager().getInstalledApplications(0)) {
-			appNames.put(app.uid, app.packageName);
-			System.out.println(app.uid + " = " + app.packageName);
-		}
-
-		return appNames;
-		 **/
 	}
 
 	//func to execute shell command
@@ -424,6 +449,5 @@ public class MainActivity extends ActionBarActivity {
 			System.out.println("InterruptedException - "+ e.getMessage());
 		}
 	}
-
 }
 

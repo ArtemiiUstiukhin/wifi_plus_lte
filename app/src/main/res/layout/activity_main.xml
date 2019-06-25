@@ -41,10 +41,33 @@
         android:visibility="gone"/>
 
     <Button
-        android:id="@+id/submit"
+        android:id="@+id/chooseApps"
         android:layout_width="300px"
         android:layout_height="100px"
         android:layout_below="@+id/text_save_battery_desc"
+        android:layout_marginTop="10px"
+        android:gravity="center"
+        android:layout_marginLeft="650px"
+        android:onClick="onClickButtonChoose"
+        android:text="Choose Apps" />
+
+    <TextView
+        android:id="@+id/chooseAppsText"
+        android:layout_width="600px"
+        android:layout_height="100px"
+        android:textSize="50px"
+        android:textStyle="bold"
+        android:text="Choose apps for control"
+        android:layout_marginTop="10px"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:layout_below="@+id/text_save_battery_desc"/>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="300px"
+        android:layout_height="100px"
+        android:layout_below="@+id/chooseApps"
         android:layout_marginTop="10px"
         android:gravity="center"
         android:layout_marginLeft="650px"
@@ -61,7 +84,7 @@
         android:layout_marginTop="10px"
         android:textColor="@android:color/black"
         android:gravity="center"
-        android:layout_below="@+id/text_save_battery_desc"/>
+        android:layout_below="@+id/chooseApps"/>
 
     <ImageView
         android:layout_width="wrap_content"

@@ -952,6 +952,10 @@
         "source": "/home/admint/.gradle/caches/transforms-2/files-2.1/6645e174719242142735d23e3637c266/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
+        "merged": "/home/admint/huawei/proj/HIPRIKeeper/app/build/intermediates/res/merged/debug/layout_activity_apps.xml.flat",
+        "source": "/home/admint/huawei/proj/HIPRIKeeper/app/src/main/res/layout/activity_apps.xml"
+    },
+    {
         "merged": "/home/admint/huawei/proj/HIPRIKeeper/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/home/admint/.gradle/caches/transforms-2/files-2.1/6645e174719242142735d23e3637c266/res/drawable-xxxhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
     },

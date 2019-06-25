@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of TODO.
+  ~
+  ~ Copyright 2015 UCLouvain - Matthieu Baerts <first.last@student.uclouvain.be>
+  ~
+  ~ This application is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation; either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AppsActivity">
+
+    <TextView
+        android:layout_width="600px"
+        android:layout_height="130px"
+        android:id="@+id/tvApps"
+        android:text="Choose apps for control"
+        android:textSize="50px"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="15px"
+        android:textColor="@android:color/black"/>
+
+    <Button
+        android:id="@+id/chooseApps"
+        android:layout_width="400px"
+        android:layout_height="130px"
+        android:layout_marginTop="15px"
+        android:gravity="center"
+        android:layout_marginLeft="650px"
+        android:onClick="onClickAppsConfirm"
+        android:text="Confirm Apps" />
+
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/appScrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="35px"
+        android:layout_below="@+id/tvApps">
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/appsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </ScrollView>
+
+</RelativeLayout>

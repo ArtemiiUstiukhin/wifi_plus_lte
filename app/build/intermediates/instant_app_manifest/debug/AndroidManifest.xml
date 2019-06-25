@@ -40,6 +40,7 @@
         android:label="@string/app_name"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="be.uclouvain.hiprikeeper.AppsActivity" />
         <activity
             android:name="be.uclouvain.hiprikeeper.MainActivity"
             android:label="@string/app_name" >
@@ -62,8 +63,7 @@
         <service
             android:name="be.uclouvain.hiprikeeper.MainService"
             android:enabled="true"
-            android:exported="true" >
-        </service>
+            android:exported="true" />
 
         <meta-data
             android:name="android.support.VERSION"
