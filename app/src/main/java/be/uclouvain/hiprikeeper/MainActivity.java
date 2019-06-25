@@ -24,6 +24,7 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -66,12 +67,13 @@ public class MainActivity extends ActionBarActivity {
 	private ArrayList commands;
 	private HashMap<String, String> tableNames;
 	private String lastError;
-
+	private SharedPreferences prefs = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		prefs = getSharedPreferences("com.mycompany.myAppName", MODE_PRIVATE);
 
 		multiIfaceSwitch = (Switch)findViewById(R.id.switch_enable);
 		saveBatterySwitch = (Switch) findViewById(R.id.switch_save_battery);
@@ -86,6 +88,7 @@ public class MainActivity extends ActionBarActivity {
 		// start a new service if needed
 
 
+
 		startForegroundService(new Intent(this, MainService.class));
 
 		sortApp.getUiApps();
@@ -94,11 +97,14 @@ public class MainActivity extends ActionBarActivity {
 
 		Context context = getApplicationContext();
 
+		//context.deleteFile("data.json");
+		//context.deleteFile("apps.json");
+
 		//int counter = 0;
 
 		TrafficSnapshot(context);
 
-		apps = sortHashMapByValues(apps);
+		//apps = sortHashMapByValues(apps);
 
 		addAppsToChooseNet(context);
 	}
@@ -108,6 +114,7 @@ public class MainActivity extends ActionBarActivity {
 		open();
 		LinearLayout main_layout = findViewById(R.id.container);
 		main_layout.removeAllViewsInLayout();
+		apps = sortHashMapByValues(apps);
 
 		for (Map.Entry<Integer, String> app : apps.entrySet()) {
 
@@ -246,6 +253,7 @@ public class MainActivity extends ActionBarActivity {
 		System.out.println("Lte: " + lte);
 		save();
 
+		
 		deletePrevRules();
 		getTableNumbers();
 		createRuleCommand();
@@ -317,22 +325,24 @@ public class MainActivity extends ActionBarActivity {
 	protected void onResume() {
 		super.onResume();
 
-		TrafficSnapshot(this);
-		ArrayList<Integer> checkedApps = JSONHelper.importFromJSON(this, false);
+		ArrayList<Integer> checkedApps = JSONHelper.importFromJSON(this, false);TrafficSnapshot(this);
 
-		ArrayList<Integer> deleteId= new ArrayList<Integer>();
+		if (checkedApps!=null){
+			TrafficSnapshot(this);
+			ArrayList<Integer> deleteId= new ArrayList<Integer>();
 
-		for (int uid : apps.keySet()){
-			if (!checkedApps.contains(uid)){
-				deleteId.add(uid);
+			for (int uid : apps.keySet()){
+				if (!checkedApps.contains(uid)){
+					deleteId.add(uid);
+				}
 			}
-		}
 
-		for (int id : deleteId){
-			apps.remove(id);
-		}
+			for (int id : deleteId){
+				apps.remove(id);
+			}
 
-		addAppsToChooseNet(this);
+			addAppsToChooseNet(this);
+		}
 
 
 		setChecked();

@@ -21,14 +21,13 @@ package be.uclouvain.hiprikeeper;
 
 import android.content.Context;
 
-import com.google.gson.Gson;
-
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class JSONHelper {
 
@@ -37,10 +36,17 @@ public class JSONHelper {
 
     static boolean exportToJSON(Context context, ArrayList<Integer> dataList, boolean mainFile) {
 
+        /**
         Gson gson = new Gson();
         DataItems dataItems = new DataItems();
         dataItems.setPhones(dataList);
         String jsonString = gson.toJson(dataItems);
+        System.out.println("JSON = " + jsonString);
+        **/
+
+        String jsonString = dataList.toString().substring(1,dataList.toString().length()-1);
+        System.out.println("STRING = "  + jsonString);
+
 
         FileOutputStream fileOutputStream = null;
 
@@ -71,11 +77,23 @@ public class JSONHelper {
         FileInputStream fileInputStream = null;
         String file = (mainFile) ? FILE_NAME : FILE_NAME_APPS;
         try{
+
             fileInputStream = context.openFileInput(file);
             streamReader = new InputStreamReader(fileInputStream);
+            BufferedReader in = new BufferedReader(streamReader);
+
+            String[] strings = in.readLine().split(", ");
+
+            ArrayList<Integer> arrayList = new ArrayList<Integer>();
+            for (String str : strings){
+                arrayList.add(Integer.parseInt(str));
+            }
+            /**
             Gson gson = new Gson();
             DataItems dataItems = gson.fromJson(streamReader, DataItems.class);
-            return  dataItems.getPhones();
+            **/
+
+            return  arrayList;
         }
         catch (IOException ex){
             ex.printStackTrace();
@@ -98,16 +116,5 @@ public class JSONHelper {
         }
 
         return null;
-    }
-
-    private static class DataItems {
-        private ArrayList<Integer> phones;
-
-        ArrayList<Integer> getPhones() {
-            return phones;
-        }
-        void setPhones(ArrayList<Integer> phones) {
-            this.phones = phones;
-        }
     }
 }
