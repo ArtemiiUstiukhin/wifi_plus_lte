@@ -21,32 +21,21 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/xt420UmJ6PnGuf0AXYkSChjmqec=" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJniLibs/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJniLibs/merge-state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJniLibs/zip-cache/xt420UmJ6PnGuf0AXYkSChjmqec=" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/be/uclouvain/hiprikeeper/JSONHelper$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/be/uclouvain/hiprikeeper/JSONHelper$DataItems.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/be/uclouvain/hiprikeeper/JSONHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/be/uclouvain/hiprikeeper/JSONHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/be/uclouvain/hiprikeeper/AppsActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/be/uclouvain/hiprikeeper/AppsActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/be/uclouvain/hiprikeeper/MainActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/be/uclouvain/hiprikeeper/MainActivity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/be/uclouvain/hiprikeeper/MainActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/be/uclouvain/hiprikeeper/MainActivity$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/be/uclouvain/hiprikeeper/MainActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/be/uclouvain/hiprikeeper/MainActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/be/uclouvain/hiprikeeper/JSONHelper$1.dex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/be/uclouvain/hiprikeeper/JSONHelper$DataItems.dex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/be/uclouvain/hiprikeeper/JSONHelper.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/be/uclouvain/hiprikeeper/JSONHelper.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/be/uclouvain/hiprikeeper/AppsActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/be/uclouvain/hiprikeeper/AppsActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/be/uclouvain/hiprikeeper/MainActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/be/uclouvain/hiprikeeper/MainActivity$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/be/uclouvain/hiprikeeper/MainActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/be/uclouvain/hiprikeeper/MainActivity$2.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/be/uclouvain/hiprikeeper/MainActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/be/uclouvain/hiprikeeper/MainActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/__content__.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/__content__.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/JSONHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/JSONHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/arch.7z" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/arch.7z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/AppsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/AppsActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/MainActivity.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -75,36 +64,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="345" selection-start-line="345" selection-end-line="345" />
+            <state relative-caret-position="-112">
+              <caret line="277" column="29" selection-start-line="277" selection-start-column="29" selection-end-line="277" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#9418#9427#0" expanded="true" />
-                <element signature="e#9962#10334#0" expanded="true" />
-                <element signature="e#10333#10334#0" expanded="true" />
-                <element signature="e#10422#10787#0" expanded="true" />
-                <element signature="e#10786#10787#0" expanded="true" />
+                <element signature="e#8148#8157#0" expanded="true" />
+                <element signature="e#10179#10551#0" expanded="true" />
+                <element signature="e#10550#10551#0" expanded="true" />
+                <element signature="e#10639#11004#0" expanded="true" />
+                <element signature="e#11003#11004#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="756">
+              <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/AppsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="117" column="33" selection-start-line="117" selection-start-column="27" selection-end-line="117" selection-end-column="33" />
+            <state relative-caret-position="72">
+              <caret line="170" column="36" selection-start-line="170" selection-start-column="26" selection-end-line="170" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/JSONHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
+            <state relative-caret-position="522">
               <caret line="46" column="90" selection-start-line="46" selection-start-column="90" selection-end-line="46" selection-end-column="90" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -163,6 +162,9 @@
       <find>wifi.</find>
       <find>apps</find>
       <find>phones</find>
+      <find>open</find>
+      <find>save</find>
+      <find>save(</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -179,10 +181,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/project/app/SortingApps.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/AppsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_apps.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/JSONHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/AppsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/MainActivity.java" />
       </list>
     </option>
@@ -372,7 +374,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.16" side_tool="true" weight="0.21081986" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.83856505" visible="true" weight="0.21081986" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.83856505" visible="true" weight="0.21081986" />
       <window_info id="Structure" order="2" sideWeight="0.16143498" side_tool="true" visible="true" weight="0.21081986" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -386,9 +388,9 @@
       <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.46813032" weight="0.23200859" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.3203125" side_tool="true" weight="0.77401894" />
       <window_info anchor="bottom" id="Build" order="5" sideWeight="0.68039775" weight="0.216971" />
-      <window_info anchor="bottom" id="Logcat" order="6" sideWeight="0.7990057" weight="0.5516129" />
+      <window_info anchor="bottom" id="Logcat" order="6" sideWeight="0.7990057" weight="0.5510204" />
       <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32903227" />
-      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.6796875" visible="true" weight="0.28141782" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.6796875" visible="true" weight="0.28141782" />
       <window_info anchor="bottom" id="Debug" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Gradle" order="1" weight="0.329661" />
@@ -605,14 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="28" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_apps.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -636,35 +630,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/AppsActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="117" column="33" selection-start-line="117" selection-start-column="27" selection-end-line="117" selection-end-column="33" />
+        <state relative-caret-position="756">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
         </state>
       </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/JSONHelper.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/AppsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="46" column="90" selection-start-line="46" selection-start-column="90" selection-end-line="46" selection-end-column="90" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2929#2938#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="72">
+          <caret line="170" column="36" selection-start-line="170" selection-start-column="26" selection-end-line="170" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="345" selection-start-line="345" selection-end-line="345" />
+        <state relative-caret-position="-112">
+          <caret line="277" column="29" selection-start-line="277" selection-start-column="29" selection-end-line="277" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9418#9427#0" expanded="true" />
-            <element signature="e#9962#10334#0" expanded="true" />
-            <element signature="e#10333#10334#0" expanded="true" />
-            <element signature="e#10422#10787#0" expanded="true" />
-            <element signature="e#10786#10787#0" expanded="true" />
+            <element signature="e#8148#8157#0" expanded="true" />
+            <element signature="e#10179#10551#0" expanded="true" />
+            <element signature="e#10550#10551#0" expanded="true" />
+            <element signature="e#10639#11004#0" expanded="true" />
+            <element signature="e#11003#11004#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/be/uclouvain/hiprikeeper/JSONHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="46" column="90" selection-start-line="46" selection-start-column="90" selection-end-line="46" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2929#2938#0" expanded="true" />
           </folding>
         </state>
       </provider>
