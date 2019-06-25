@@ -112,7 +112,7 @@ public class MainActivity extends ActionBarActivity {
 
 	private void addAppsToChooseNet(Context context){
 
-		//open();
+		open();
 		LinearLayout main_layout = findViewById(R.id.container);
 		main_layout.removeAllViewsInLayout();
 		apps = sortHashMapByValues(apps);
@@ -169,7 +169,7 @@ public class MainActivity extends ActionBarActivity {
 
 	}
 
-	/**
+
 	public void open(){
 
 		ArrayList<Integer> phones = JSONHelper.importFromJSON(this, true);
@@ -199,7 +199,7 @@ public class MainActivity extends ActionBarActivity {
 			System.out.println("Не удалось сохранить данные");
 		}
 	}
-	 **/
+
 
 	public static LinkedHashMap<Integer, String> sortHashMapByValues(HashMap<Integer, String> passedMap) {
 		List<Integer> mapKeys = new ArrayList<>(passedMap.keySet());
@@ -253,7 +253,7 @@ public class MainActivity extends ActionBarActivity {
 
 		System.out.println("Wifi: " + wifi);
 		System.out.println("Lte: " + lte);
-		//save();
+		save();
 
 
 		/**
@@ -263,8 +263,7 @@ public class MainActivity extends ActionBarActivity {
 		for (Object str : commands){
 			executeCommand(str.toString());
 		}
-		 **/
-
+		**/
 		//executeCommand("ip rule");
 	}
 
@@ -349,10 +348,10 @@ public class MainActivity extends ActionBarActivity {
 	protected void onResume() {
 		super.onResume();
 
-		//ArrayList<Integer> checkedApps = JSONHelper.importFromJSON(this, false);
+		ArrayList<Integer> checkedApps = JSONHelper.importFromJSON(this, false);
 		//TrafficSnapshot(this);
 
-		/**
+
 		if (checkedApps!=null){
 			TrafficSnapshot(this);
 			ArrayList<Integer> deleteId= new ArrayList<Integer>();
@@ -369,7 +368,7 @@ public class MainActivity extends ActionBarActivity {
 
 			addAppsToChooseNet(this);
 		}
-		 **/
+
 
 
 		setChecked();

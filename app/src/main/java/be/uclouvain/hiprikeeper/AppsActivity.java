@@ -58,7 +58,7 @@ public class AppsActivity extends AppCompatActivity {
 
         LinearLayout main_layout = findViewById(R.id.appsContainer);
 
-        //open();
+        open();
 
         for (Map.Entry<Integer, String> app : apps.entrySet()) {
 
@@ -115,7 +115,7 @@ public class AppsActivity extends AppCompatActivity {
         }
     }
 
-    /**
+
     public void open(){
         ArrayList<Integer> phones = JSONHelper.importFromJSON(this, false);
         if(phones!=null){
@@ -144,7 +144,6 @@ public class AppsActivity extends AppCompatActivity {
             System.out.println("Не удалось сохранить данные");
         }
     }
-     **/
 
 
     public void onClickAppsConfirm(View view){
@@ -170,9 +169,9 @@ public class AppsActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.putExtra("checkedApps", checkedApps);
         setResult(RESULT_OK, intent);
+        save();
         finish();
 
-        //save();
         //super.onBackPressed();
     }
 
